@@ -12,4 +12,4 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weight refers to the dungeons level weight awarded to the player.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**excess**<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;excess refers to the amount of excess Catacombs experience that the player has. An excess of `1` means the player has 125% the experience requirement of Catacombs 50, and so on (25% of Catacombs 50 per 1 excess).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;excess refers to the amount of excess Catacombs experience that the player has. An excess of `1` means the player has 200% the experience requirement of Catacombs 50, and so on.
