@@ -74,10 +74,11 @@ async def calc_dgc(data, master_data):
   try:
     for f, v in mb:
       if str(f) in buffs:
-        if v >= 100:
+        threshold = 20
+        if v >= threshold:
           upper_bound += buffs[str(f)]
-        else: # 99 or less
-          upper_bound += (buffs[str(f)] * (v/100)**2)
+        else: # less
+          upper_bound += (buffs[str(f)] * (v/threshold)**1.840896416)
 
     m_score = 0
     for floor, amt in [(((floor-1),int(amt))) for floor,amt in mb]:
