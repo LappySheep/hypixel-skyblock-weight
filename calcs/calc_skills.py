@@ -4,13 +4,13 @@ import asyncio
 lv60 = 111672425
 overflow_skill_multipliers = [
     8, # ench
-    27, # tame
+    12.2, # tame
     5, # alch
-    140, # mine
-    225, # farm
-    330, # comb
-    360, # fora
-    700, # fish
+    125, # mine
+    200, # farm
+    260, # comb
+    350, # fora
+    650, # fish
 ]
 
 async def calc_skills(stat_set, srw, exp):
