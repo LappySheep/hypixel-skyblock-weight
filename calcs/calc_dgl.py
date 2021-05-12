@@ -34,7 +34,7 @@ async def calc_dgl(exp):
     n = 0.2 * (lvl / 50) ** 2.967355422
   else:
     part = 142452410 # 25% of level 50
-    temp_lvl = 50+((exp-lv50)/lv50) # cata 50 x2 = temp level 54
+    temp_lvl = 50+((exp-lv50)/part) # cata 50 x2 = temp level 54
     n = 0.2 * (1+((temp_lvl-50) / 50)) ** 2.967355422
 
 
