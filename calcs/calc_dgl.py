@@ -1,11 +1,6 @@
 import asyncio
 
-"""
-overall: final multiplier
-overall == 1 => 15000 max weight
-"""
-overall = (1/5)
-
+overall = 0.6211258376589867
 
 exp_table = [
   0,
@@ -47,7 +42,7 @@ async def calc_dgl(exp):
     try:
       temp_lvl
     except:
-      weight = overall * (((1.203184673)**(lvl+1) - 1.05994990217) * (1 + n))
+      weight = overall * ((1.18340401286164044**(lvl+1) - 1.05994990217254) * (1 + n))
       return lvl, weight, 0
     else:
       weight = 15000 * overall * (n/0.2)
@@ -55,5 +50,3 @@ async def calc_dgl(exp):
       return lvl, weight, excess
   else:
     return 0,0,0
-
-# 15000 weight at cata 50 if overall == 1
