@@ -4,6 +4,14 @@ DM me if you want to get an API key.
 
 
 
+https://weight-api-314022.ew.r.appspot.com/api/v1/weight/all/player?key=[YOUR_API_KEY]
+  &hp_key=
+    This is your Hypixel API key. Keys aren't stored. I don't have an elevated API key so until I do, you will have to provide your key in the request.
+  &ign=
+    String. In-game name of the player you want to check.
+  Returns: Total weight, and each weight individually. This assumes the 'latest' profile of the player. Currently no way to specify but based on context it doesn't seem like it's needed.
+
+
 https://weight-api-314022.ew.r.appspot.com/api/v1/weight/skills/main?key=[YOUR_API_KEY]
   &skills=
     Comma-separated (no spaces), 8 skills. Order: Enchanting / Taming / Alchemy / Mining / Farming / Foraging / Combat / Fishing.
