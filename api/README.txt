@@ -39,6 +39,8 @@ https://weight-api-314022.ew.r.appspot.com/api/v1/weight/slayers/rating?key=[YOU
     Integer. Amount of spider slayer exp.
   &wolf=
     Integer. Amount of wolf slayer exp.
+  &enderman=
+    Integer. Amount of enderman slayer exp.
   Returns: Slayer scores for each type, total slayer score, average slayer score, total slayer exp, total slayer weight.
 
 
