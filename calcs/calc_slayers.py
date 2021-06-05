@@ -26,15 +26,17 @@ async def new_slayer(score, xp):
   return step6 # return step 6
 
 
-async def calc_slayers(zombie, spider, wolf):
+async def calc_slayers(zombie, spider, wolf, enderman):
   zombie_score = await calc_slayerscore(zombie)
   spider_score = await calc_slayerscore(spider)
   wolf_score = await calc_slayerscore(wolf)
+  eman_score = await calc_slayerscore(enderman)
 
   zombie2 = await new_slayer(zombie_score, zombie)
   spider2 = await new_slayer(spider_score, spider)
   wolf2 = await new_slayer(wolf_score, wolf)
+  eman2 = await new_slayer(eman_score, enderman)
 
-  individual = zombie2/6000 + spider2/4500 + wolf2/2000
-  extra = (zombie + spider + (2*wolf)) / 225000
-  return (individual + extra), (zombie + spider + wolf)
+  individual = zombie2/6000 + spider2/4500 + wolf2/2000 + eman2/925
+  extra = (zombie + spider + (2*wolf) + (2*enderman)) / 240000
+  return (individual + extra), (zombie + spider + wolf + enderman)
