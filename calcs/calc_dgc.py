@@ -14,7 +14,7 @@ worth = [ # index = floor, 0 = entrance, 8-14 = master, item = worth per run
   92, 158.8, # m5
   289.04, # 488.376 # m7
 ] # worth is not rating, but is the multiplier
-max_1000 = sum(worth) * 1000
+max_1000 = sum(worth[:8]) * 1000
 m_max_1000 = sum(worth[8:]) * 1000
 
 buffs = {
@@ -57,7 +57,7 @@ async def calc_dgc(data, master_data):
     else:
       excess = 0
 
-    s = (amt * worth[:8][floor])
+    s = (amt * worth[floor])
 
     if excess: # more than 0
       s *= math.log(((excess / 1000)+1), math.e)+1
