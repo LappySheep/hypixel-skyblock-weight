@@ -60,7 +60,7 @@ async def calc_dgc(data, master_data):
     s = (amt * worth[floor])
 
     if excess: # more than 0
-      s *= math.log(((excess / 1000)+1), math.e)+1
+      s *= math.log(((excess / 1000)+1), 7.5)+1
 
     score += s
 
@@ -94,7 +94,7 @@ async def calc_dgc(data, master_data):
         s = 0 # floor not in worth dict
 
       if excess: # more than 0
-        s *= math.log(((excess / 1000)+1), math.e)+1
+        s *= math.log(((excess / 1000)+1), 5)+1
 
       m_score += s
 
