@@ -14,3 +14,7 @@ async def calc_slayerscore(xp):
   # y = (x^3 / 6) + (x^2 / 2) + (x / 3)
   x = await resolve(y)
   return x
+
+# alternative
+def s(x):d,z=x/10**5,3**(-5/2);j=((d-z)*(d+z))**0.5;return(3*(d+j))**(1/3)+(3*(d-j))**(1/3)-1if x>=6416else(4/3)**0.5*math.cos(math.accos(d*z)/3)-1
+# thank you lucy
