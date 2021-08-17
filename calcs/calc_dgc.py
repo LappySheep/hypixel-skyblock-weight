@@ -7,32 +7,32 @@ worth = [ # index = floor, 0 = entrance, 8-14 = master, item = worth per run
   2.1034, 4.5966,
   7.9383, 13.4018, # 4
   23.1071, 43.7857,
-  93, # 7
+  63.3437, # 7
 
-  26, # m1
-  37, 56.5, # m3
-  92, 158.8, # m5
-  289.04, # 488.376 # m7
+  24, # m1
+  33.5, 46.575, # m3
+  81.9553, 99.6368, # m5
+  154.4188, # 488.376 # m7
 ] # worth is not rating, but is the multiplier
 max_1000 = sum(worth[:8]) * 1000
 m_max_1000 = sum(worth[8:]) * 1000
 
 buffs = {
-  "1": 250, "2": 350,
-  "3": 500, "4": 700,
-  "5": 1000, "6": 1500,
-  "7": 2200
+  "1": 125, "2": 250,
+  "3": 450, "4": 775,
+  "5": 1000, "6": 1400,
+  "7": 1750
 }
 
 """
 upper bound buffs:
-  m1 completion: +250
-  m2 completion: +350
-  m3 completion: +500
-  m4 completion: +700
+  m1 completion: +125
+  m2 completion: +250
+  m3 completion: +450
+  m4 completion: +775
   m5 completion: +1000
-  m6 completion: +1500
-  m7 completion: +2200
+  m6 completion: +1400
+  m7 completion: +1750
 """
 
 
@@ -44,7 +44,7 @@ async def ordered(d):
   return l
 
 async def calc_dgc(data, master_data):
-  upper_bound = 2500 # caps at 9000
+  upper_bound = 1500 # caps at 5500,7250 for m6/m7
   beaten, m_beaten = data, master_data
   b, mb = await ordered(beaten), await ordered(m_beaten)
 
