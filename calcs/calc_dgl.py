@@ -1,6 +1,6 @@
 import asyncio
 
-overall = 0.6623724753160287
+overall = 0.5046647430979266
 lv50 = 569809640
 
 exp_table = [
@@ -35,7 +35,7 @@ async def calc_dgl(exp):
   else:
     part = 142452410 # 25% of level 50
     temp_lvl = 50+((exp-lv50)/part) # cata 50 x2 = temp level 54
-    n = 0.2 * (1+((temp_lvl-50) / 50)) ** 2.967355422
+    n = (1+((temp_lvl-50) / 50)) ** 2.967355422
 
 
   excess = 0
@@ -46,7 +46,7 @@ async def calc_dgl(exp):
       weight = overall * ((1.18340401286164044**(lvl+1) - 1.05994990217254) * (1 + n))
       return lvl, weight, 0
     else:
-      weight = 3250 * (n/0.15465244570598540)
+      weight = 3250 * n
       excess = (temp_lvl - 50)/4
       return lvl, weight, excess
   else:
