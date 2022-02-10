@@ -1,6 +1,6 @@
 import asyncio
 
-overall = 0.5046647430979266
+overall = 0.6366539836004613
 lv50 = 569809640
 
 exp_table = [
