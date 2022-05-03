@@ -1,7 +1,7 @@
 import asyncio
 
 
-overall = 168/185 # 10.5k
+overall = 168/185*2 # 10.5k*2
 
 lv60 = 111672425
 factors = [
@@ -39,8 +39,7 @@ def effective_xp(xp, factor):
   return (z*lv60)
 
 async def calc_skills(stat_set, srw, exp):
-  ench, tame, alch, mine, farm, fora, comb, fish, _,_,_,_ = stat_set
-  # 4 slayers ^
+  ench, tame, alch, mine, farm, fora, comb, fish = stat_set[:8]
   
   shorthand = ["ench", "tame", "alch", "mine", "farm", "fora", "comb", "fish"]
   sAvg = (ench + tame + alch + mine + farm + fora + comb + fish) / 8
@@ -71,7 +70,7 @@ async def calc_skills(stat_set, srw, exp):
       osm = overflow_skill_multipliers[ind]
       t = rating * osm
       if t > 0:
-        overflow_rating += (rating * osm)
+        overflow_rating += (overall * rating * osm)
 
 
   return skill_rating, sAvg, overflow_rating
