@@ -2,6 +2,8 @@ import asyncio
 import math
 
 
+overall = 2
+
 worth = [ # index = floor, 0 = entrance, 8-14 = master, item = worth per run
   0.0827,
   2.1034, 4.5966,
@@ -65,7 +67,7 @@ async def calc_dgc(data, master_data):
     score += s
 
   
-  rating = (score / max_1000) * upper_bound
+  rating = (score / max_1000) * upper_bound * overall
 
 
 
@@ -98,7 +100,7 @@ async def calc_dgc(data, master_data):
 
       m_score += s
 
-    m_rating = (m_score / m_max_1000) * upper_bound
+    m_rating = (m_score / m_max_1000) * upper_bound * overall
   except:
     m_rating = 0
 
