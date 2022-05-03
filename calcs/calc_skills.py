@@ -43,6 +43,11 @@ async def calc_skills(stat_set, srw, exp):
   
   shorthand = ["ench", "tame", "alch", "mine", "farm", "fora", "comb", "fish"]
   sAvg = (ench + tame + alch + mine + farm + fora + comb + fish) / 8
+
+  sAvgCapped = (
+    ench + (tame if tame<=50else 50) + (alch if alch<=50else 50) + mine + farm + (fora if fora<=50else 50) + comb + (fish if fish<=50else 50)
+  ) / 8
+
   n = 12 * ((sAvg / 60) ** 2.44780217148309)
 
   p = 1 #5/11
@@ -73,4 +78,4 @@ async def calc_skills(stat_set, srw, exp):
         overflow_rating += (overall * rating * osm)
 
 
-  return skill_rating, sAvg, overflow_rating
+  return skill_rating, sAvg, overflow_rating, sAvgCapped
