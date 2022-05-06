@@ -46,7 +46,7 @@ async def calc_dgl(exp):
       weight = overall * ((1.18340401286164044**(lvl+1) - 1.05994990217254) * (1 + n))
       return lvl, weight, 0
     else:
-      weight = 4100 + extra
+      weight = (4100 + extra) * 2
       excess = (temp_lvl - 50)/4
       return lvl, weight, excess
   else:
