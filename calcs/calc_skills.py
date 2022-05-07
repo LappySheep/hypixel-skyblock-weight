@@ -75,7 +75,7 @@ async def calc_skills(stat_set, srw, exp):
       osm = overflow_skill_multipliers[ind]
       t = rating * osm
       if t > 0:
-        overflow_rating += (overall * rating * osm)
+        overflow_rating += (2 * rating * osm)
 
 
   return skill_rating, sAvg, overflow_rating, sAvgCapped
