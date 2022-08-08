@@ -1,5 +1,4 @@
-import asyncio
-from calcs.calc_slayerscore import calc_slayerscore
+from .slayer_score import calc_slayerscore
 
 depreciation_scaling = [0.75030106128, 0.7732512436, 0.80852054920, 0.8374104242, 0.87]
 overall = 2
@@ -36,12 +35,12 @@ def new_slayer(score, xp, ind): # example uses depreciation_scaling = 0.85
   return total_effective
 
 
-async def calc_slayers(zombie, spider, wolf, enderman, blaze):
-  zombie_score = await calc_slayerscore(zombie)
-  spider_score = await calc_slayerscore(spider)
-  wolf_score = await calc_slayerscore(wolf)
-  eman_score = await calc_slayerscore(enderman)
-  blaze_score = await calc_slayerscore(blaze)
+def calc_slayers(zombie, spider, wolf, enderman, blaze):
+  zombie_score = calc_slayerscore(zombie)
+  spider_score = calc_slayerscore(spider)
+  wolf_score = calc_slayerscore(wolf)
+  eman_score = calc_slayerscore(enderman)
+  blaze_score = calc_slayerscore(blaze)
 
   zombie2 = new_slayer(zombie_score, zombie, 0)
   spider2 = new_slayer(spider_score, spider, 1)

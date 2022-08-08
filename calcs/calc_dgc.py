@@ -1,4 +1,3 @@
-import asyncio
 import math
 
 
@@ -38,17 +37,17 @@ upper bound buffs:
 """
 
 
-async def ordered(d):
+def ordered(d):
   l = []
   for i in range(8):
     if str(i) in d:
       l.append((i, d[str(i)]))
   return l
 
-async def calc_dgc(data, master_data):
+def calc_dgc(data, master_data):
   upper_bound = 1500 # caps at 5000 for m7
   beaten, m_beaten = data, master_data
-  b, mb = await ordered(beaten), await ordered(m_beaten)
+  b, mb =  ordered(beaten), ordered(m_beaten)
 
 
   score = 0 # turns into weight later

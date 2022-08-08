@@ -1,4 +1,4 @@
-import asyncio
+
 
 overall = 0.6366539836004613*2
 lv50 = 569809640
@@ -17,7 +17,7 @@ exp_table = [
 ]
 
 
-async def calc_dgl(exp):
+def calc_dgl(exp):
   lvl = -1
   for level in exp_table:
     if exp >= level:

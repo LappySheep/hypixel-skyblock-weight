@@ -1,4 +1,4 @@
-import asyncio
+
 
 
 overall = 168/185*2 # 10.5k*2
@@ -38,14 +38,14 @@ def effective_xp(xp, factor):
       z += factor**i
   return (z*lv60)
 
-async def calc_skills(stat_set, srw, exp):
+def calc_skills(stat_set, srw, exp):
   ench, tame, alch, mine, farm, fora, comb, fish = stat_set[:8]
   
   shorthand = ["ench", "tame", "alch", "mine", "farm", "fora", "comb", "fish"]
   sAvg = (ench + tame + alch + mine + farm + fora + comb + fish) / 8
 
   sAvgCapped = (
-    ench + (tame if tame<=50else 50) + (alch if alch<=50else 50) + mine + farm + (fora if fora<=50else 50) + comb + (fish if fish<=50else 50)
+    ench + (tame if tame<=50 else 50) + (alch if alch<=50 else 50) + mine + farm + (fora if fora<=50 else 50) + comb + (fish if fish<=50 else 50)
   ) / 8
 
   n = 12 * ((sAvg / 60) ** 2.44780217148309)
