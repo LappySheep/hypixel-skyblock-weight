@@ -51,3 +51,10 @@ async def calc_dgl(exp):
       return lvl, weight, excess
   else:
     return 0,0,0
+
+
+
+# l, dg_level_rating, excess = calc_dgl(dungeon_exp)
+# l => not needed in weight calculation || player catacombs level
+# dg_level_rating => weight awarded from catacoms level
+# excess => not needed in weight calculation || % of cata 50 which is in excess (used in display)
