@@ -1,7 +1,6 @@
-import asyncio
 from calcs.calc_slayerscore import calc_slayerscore
 
-depreciation_scaling = [0.75030106128, 0.7732512436, 0.80852054920, 0.8374104242, 0.87]
+depreciation_scaling = [0.72529102591, 0.7732512436, 0.80852054920, 0.8374104242, 0.842]
 overall = 2
 
 
@@ -36,12 +35,12 @@ def new_slayer(score, xp, ind): # example uses depreciation_scaling = 0.85
   return total_effective
 
 
-async def calc_slayers(zombie, spider, wolf, enderman, blaze):
-  zombie_score = await calc_slayerscore(zombie)
-  spider_score = await calc_slayerscore(spider)
-  wolf_score = await calc_slayerscore(wolf)
-  eman_score = await calc_slayerscore(enderman)
-  blaze_score = await calc_slayerscore(blaze)
+def calc_slayers(zombie, spider, wolf, enderman, blaze):
+  zombie_score = calc_slayerscore(zombie)
+  spider_score = calc_slayerscore(spider)
+  wolf_score = calc_slayerscore(wolf)
+  eman_score = calc_slayerscore(enderman)
+  blaze_score = calc_slayerscore(blaze)
 
   zombie2 = new_slayer(zombie_score, zombie, 0)
   spider2 = new_slayer(spider_score, spider, 1)
@@ -49,6 +48,6 @@ async def calc_slayers(zombie, spider, wolf, enderman, blaze):
   eman2 = new_slayer(eman_score, enderman, 3)
   blaze2 = new_slayer(blaze_score, blaze, 4)
 
-  individual = zombie2/8390.64 + spider2/7019.57 + wolf2/2982.06 + eman2/1118.81 + blaze2/751.281
-  extra = (zombie + 1.6*spider + 3.6*wolf + 10*enderman + 15*blaze) / 1000000
+  individual = zombie2/9250 + spider2/7019.57 + wolf2/2982.06 + eman2/996.3003 + blaze2/935.0455
+  extra = (zombie + 1.6*spider + 3.6*wolf + 10*enderman + 10*blaze) / 1000000
   return overall * (individual + extra), (zombie + spider + wolf + enderman + blaze)
