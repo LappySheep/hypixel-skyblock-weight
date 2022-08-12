@@ -51,3 +51,7 @@ def calc_slayers(zombie, spider, wolf, enderman, blaze):
   individual = zombie2/9250 + spider2/7019.57 + wolf2/2982.06 + eman2/996.3003 + blaze2/935.0455
   extra = (zombie + 1.6*spider + 3.6*wolf + 10*enderman + 10*blaze) / 1000000
   return overall * (individual + extra), (zombie + spider + wolf + enderman + blaze)
+
+
+
+# slayer_rating, total_slayers = calc_slayers(*slayers)
