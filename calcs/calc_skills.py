@@ -67,3 +67,18 @@ def calc_skills(stat_set, srw, exp):
 
 
   return skill_rating, sAvg, overflow_rating, sAvgCapped
+
+
+
+# skill_rating, sAvg, overflow_rating, sAvgCapped = calc_skills(stat_set, srw, exp)
+# 'exp' is in this format: 
+# exp = [
+#   enchanting_exp, taming_exp, alchemy_exp, mining_exp,
+#   farming_exp, foraging_exp, combat_exp, fishing_exp,
+#   zombie_exp, spider_exp, wolf_exp, eman_exp, blaze_exp
+# ]
+# 'stat_set' is the same as 'exp', but all skill xp is converted to integer levels instead
+# 'skill_rating' is the amount of non-overflow skill weight
+# 'sAvg' is the player's skill average but counting every skill to level 60 regardless of in game cap
+# 'sAvgCapped' is the player's skill average but using in game caps
+# overflow_rating is the amount of overflow skill weight
