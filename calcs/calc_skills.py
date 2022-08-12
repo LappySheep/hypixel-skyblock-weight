@@ -1,44 +1,32 @@
-import asyncio
-
-
 overall = 168/185*2 # 10.5k*2
 
 lv60 = 111672425
 factors = [
-  0.8970917856434051,
-  0.9038421238097485,
-  0.88836322872987277,
-  0.929383683888072,
-  0.9329795030275141,
-  0.9348318885884501,
-  0.9368106217543707,
-  0.9401081007640278,
+  0.9560187460,     # 0.4
+  0.9422102267,     # 0.3
+  0.9227482118,     # 0.2
+  0.9713042815,     # 0.55
+  0.9861914807,     # 0.75
+  0.9892892803,     # 0.8
+  0.9892892803,     # 0.8
+  0.9828798757,     # 0.7
 ]
 
 overflow_skill_multipliers = [
-  6.3207, # ench
-  9.2003, # tame
-  4.1641, # alch
-  77.2840, # mine
-  123.5962, # farm
-  163.0884, # comb
-  227.5907, # fora
-  504.2361, # fish
+  7, # ench
+  4, # tame
+  1.5, # alch
+  25, # mine
+  70, # farm
+  125, # comb
+  125, # fora
+  85, # fish
 ]
 
-def effective_xp(xp, factor):
-  ht = xp / lv60
-  z = 0
-  r = xp
-  if ht < 1:
-    return float(xp)
-  for i in range(int(ht)+1):
-    if r >= lv60:
-      r -= lv60
-      z += factor**i
-  return (z*lv60)
+effective_xp = lambda xp, factor: xp**factor
 
-async def calc_skills(stat_set, srw, exp):
+
+def calc_skills(stat_set, srw, exp):
   ench, tame, alch, mine, farm, fora, comb, fish = stat_set[:8]
   
   shorthand = ["ench", "tame", "alch", "mine", "farm", "fora", "comb", "fish"]
@@ -75,7 +63,7 @@ async def calc_skills(stat_set, srw, exp):
       osm = overflow_skill_multipliers[ind]
       t = rating * osm
       if t > 0:
-        overflow_rating += (2 * rating * osm)
+        overflow_rating += (overall * rating * osm)
 
 
   return skill_rating, sAvg, overflow_rating, sAvgCapped
