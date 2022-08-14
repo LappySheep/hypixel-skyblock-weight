@@ -17,3 +17,6 @@ Since I use these calculations for my bot, if you have issues to raise, they wil
 
 Senither has a tool to make collecting important player statistics easier (since the Hypixel API may be frustrating and/or less intuitive to use than expected):
   https://github.com/Senither/hypixel-skyblock-facade
+
+https://www.npmjs.com/package/lilyweight
+thank you desco and antonio
