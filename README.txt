@@ -17,3 +17,12 @@ Since I use these calculations for my bot, if you have issues to raise, they wil
 
 Senither has a tool to make collecting important player statistics easier (since the Hypixel API may be frustrating and/or less intuitive to use than expected):
   https://github.com/Senither/hypixel-skyblock-facade
+
+Desco and Antonio have a JS port of Lily Weight here:
+  https://github.com/Antonio32A/lilyweight
+  https://www.npmjs.com/package/lilyweight
+
+timnoot has a more usable formatting of Lily Weight, since this repo is for the code directly from my Discord bot:
+  https://pypi.org/project/lilyweight/
+  https://github.com/timnoot/lilyweight
+
